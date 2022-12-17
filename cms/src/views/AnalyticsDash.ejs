@@ -6,9 +6,7 @@
 <div class="homePageContainer">
   <div class="sideBar">
     <h2>Maudhui</h2>
-    <% if(currentUser.type !== 'contentManager') {%>
-      <a href="/user-management" class="special"><h6><%= __('Ongeza Mtumiaji Mpya')%></h6></a>
-    <% } %>  
+
     <a href="/encyclopedia"><h6><%= __('Maktaba')%></h6></a>
     <a href="/quiz-management"><h6><%= __('Chemsha bongo')%></h6></a>    
     <a href="/avatar-message-management"><h6><%= __('Dokezo za Hawa')%></h6></a>    
@@ -17,6 +15,9 @@
     <a href="/survey-management"><h6><%= __('Utafiti')%></h6></a>
     <br>
     <h2>Mpangilio</h2>
+    <% if(currentUser.type !== 'contentManager') {%>
+      <a href="/user-management" class="special"><h6><%= __('Ongeza Mtumiaji Mpya')%></h6></a>
+    <% } %>  
     <a href="/notifications-management"><h6><%= __('Tuma taarifa')%></h6></a>
     <a href="/suggestions-management" class="special"><h6><%= __('Meseji za Mtumiaji')%></h6></a>
     <br>
