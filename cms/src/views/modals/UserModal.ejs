@@ -1,0 +1,56 @@
+<!-- Modal -->
+<div
+  class="modal fade bd-example-modal-lg"
+  id="dynamicModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="dynamicModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dynamicModalLabel"><%= __('Ongeza Mtumiaji Mpya') %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-borderless modal-table">
+          <thead>
+            <tr>
+              <th style="width: 10%"><%= __('Jina la Mtumiaji') %></th>
+              <th id="col1TableHeading"  style="width: 10%"><%= __('Neno la siri') %></th>
+              <th style="width: 10%"><%= __('Jukumu') %></th>
+            </tr>
+          </thead>
+          <tbody style="overflow-y: scroll">
+            <td>
+              <input type="text" class="form-control" id="col0TableModal" />
+              <p id="errorCat409" style="display: none;">Jinsi ya kuwa wa kipekee/tofauti</p>
+            </td>
+            <td id="col1TableEntry">
+              <input type="text" class="form-control" id="col1TableModal" />
+            </td>
+            <td>
+              <select class="custom-select" id="col2TableModal">
+                <% if(currentUser.type === 'superAdmin') {%>
+                <option value="superAdmin">Msimamizi mkuu</option>
+                <option value="admin">Msimamizi</option>
+                <option value="contentManager">Meneja wa maudhui</option>
+                <% } else if(currentUser.type === 'admin') { %>
+                <option value="contentManager">Meneja wa maudhui</option>
+                <% } %>
+              </select>
+            </td>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= __('Funga') %></button>
+        <button type="submit" class="btn btn-primary" id="btnEditConfirm"><%= __('Thibitisha') %></button>
+      </div>
+    </div>
+  </div>
+  <span id="itemID" hidden></span>
+</div>

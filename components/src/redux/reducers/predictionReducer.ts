@@ -1,0 +1,17 @@
+import _ from 'lodash'
+import { PredictionSerializableState } from '@oky/core'
+import { Actions } from '../types/index'
+
+export type PredictionState = PredictionSerializableState | null
+
+const initialState: PredictionState = null
+
+export function predictionReducer(state = initialState, action: Actions): PredictionState {
+  if (action.type === 'SET_PREDICTION_ENGINE_STATE') {
+    return action.payload.predictionState.toJSON()
+  }
+  // if(action.type === 'VERIFY_PERIOD_DAY'){
+  //   return action.payload.
+  // }
+  return state
+}

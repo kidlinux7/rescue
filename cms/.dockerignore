@@ -1,0 +1,6 @@
+dist
+node_modules
+npm-debug.log
+README.md
+.env*
+oky-firebase-config.json
